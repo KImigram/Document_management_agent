@@ -3,6 +3,8 @@
 *.png
 *.xlsx
 
+!.gitkeep
+
 # 忽略 JSONL 数据文件
 *.jsonl
 
