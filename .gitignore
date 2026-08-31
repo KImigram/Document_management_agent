@@ -1,0 +1,11 @@
+
+# 忽略图像数据集
+*.png
+*.xlsx
+
+# 忽略 JSONL 数据文件
+*.jsonl
+
+# 忽略 Python 缓存
+__pycache__/
+*.pyc
