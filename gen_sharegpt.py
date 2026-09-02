@@ -21,8 +21,8 @@ price:表示销售货物的单价
 # 读取Excel数据
 data = pd.read_excel('data/output_label.xlsx')
 
-TRAIN_RANGE = (0, 150)  # 训练数据范围
-VAL_RANGE = (150, 200)  # 评估数据范围
+TRAIN_RANGE = (0, 800)  # 训练数据范围
+VAL_RANGE = (850, 1000)  # 评估数据范围
 PATH_PREF = '/workspace/team1/LLaMA-Factory/data/doc_agent' # 训练数据的服务器路径前缀
 
 def create_conversation(image_rows, image_path):# 为单个图片生成Share_gpt格式的对话数据
@@ -51,27 +51,30 @@ def create_conversation(image_rows, image_path):# 为单个图片生成Share_gpt
 from tqdm import trange
 import json
 
-with open('train.jsonl', 'w', encoding= 'utf-8') as f:
-    for i in trange(*TRAIN_RANGE):
-        image_name = f'Sample{i}.png'
-        # 提取Excel中所有的对应数据行
-        image_rows = data[data['图像名'] == f'output_image\\{image_name}']
-         # 生成对话
-        conversation = create_conversation(image_rows, f'train/{image_name}')
+def main():
 
-        f.write(json.dumps(conversation, ensure_ascii=False) + '\n')
+    with open('train.jsonl', 'w', encoding= 'utf-8') as f:
+        for i in trange(*TRAIN_RANGE):
+            image_name = f'Sample{i}.png'
+            # 提取Excel中所有的对应数据行
+            image_rows = data[data['图像名'] == f'output_image\\{image_name}']
+             # 生成对话
+            conversation = create_conversation(image_rows, f'train/{image_name}')
 
-with open('val.jsonl', 'w', encoding= 'utf-8') as f:
-    for i in trange(*VAL_RANGE):
-        image_name = f'Sample{i}.png'
-        # 提取Excel中所有的对应数据行
-        image_rows = data[data['图像名'] == f'output_image\\{image_name}']
-         # 生成对话
-        conversation = create_conversation(image_rows, f'val/{image_name}')
+            f.write(json.dumps(conversation, ensure_ascii=False) + '\n')
 
-        f.write(json.dumps(conversation, ensure_ascii=False) + '\n')
+    with open('val.jsonl', 'w', encoding= 'utf-8') as f:
+        for i in trange(*VAL_RANGE):
+            image_name = f'Sample{i}.png'
+            # 提取Excel中所有的对应数据行
+            image_rows = data[data['图像名'] == f'output_image\\{image_name}']
+             # 生成对话
+            conversation = create_conversation(image_rows, f'val/{image_name}')
+
+            f.write(json.dumps(conversation, ensure_ascii=False) + '\n')
 
 # print(data.shape)
 # 生成训练数据'data/train/Sample0.png-Sample149.png' csv内容，不同内容用，拼接，不同行用//分割
 
-
+if __name__ == "__main__":
+    main()
