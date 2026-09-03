@@ -1,6 +1,6 @@
 import base64
 
-image_path = "test.png"
+image_path = "../test.png"
 
 def main():
     with open(image_path, "rb") as f:

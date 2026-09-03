@@ -10,7 +10,7 @@ import requests
 API_URL = "http://localhost:5006/v1/chat/completions"
 
 # 修改成你的图片路径
-IMAGE_PATH = "test.png"
+IMAGE_PATH = "../test.png"
 
 
 # ============================================================

@@ -53,7 +53,7 @@ import json
 
 def main():
 
-    with open('train.jsonl', 'w', encoding= 'utf-8') as f:
+    with open('../train.jsonl', 'w', encoding='utf-8') as f:
         for i in trange(*TRAIN_RANGE):
             image_name = f'Sample{i}.png'
             # 提取Excel中所有的对应数据行
@@ -63,7 +63,7 @@ def main():
 
             f.write(json.dumps(conversation, ensure_ascii=False) + '\n')
 
-    with open('val.jsonl', 'w', encoding= 'utf-8') as f:
+    with open('../val.jsonl', 'w', encoding='utf-8') as f:
         for i in trange(*VAL_RANGE):
             image_name = f'Sample{i}.png'
             # 提取Excel中所有的对应数据行

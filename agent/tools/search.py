@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+from langchain_deepseek import ChatDeepSeek
 from langchain_core.tools import tool
 
 @tool
@@ -41,9 +44,7 @@ from langchain_deepseek import ChatDeepSeek
 DB_PATH = Path(__file__).resolve().parent.parent / "orders.db"
 
 
-# ============================================================
 # Text-to-SQL 模型
-# ============================================================
 
 llm = ChatDeepSeek(
     model="deepseek-chat",
@@ -51,9 +52,6 @@ llm = ChatDeepSeek(
 )
 
 
-# ============================================================
-# 数据库结构
-# ============================================================
 
 DATABASE_SCHEMA = """
 SQLite数据库中只有一张订单表：

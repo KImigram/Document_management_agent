@@ -43,8 +43,8 @@ SYSTEM_PROMPT = """
 10．识别订单图片
 """
 # prompt pilot 可用于生成提示词
-from tools.vision import parse_order_image
-from tools.search import search_orders
+from agent.tools.vision import parse_order_image
+from agent.tools.search import search_orders
 
 tools = [search_orders, parse_order_image]
 
@@ -67,9 +67,11 @@ def chat_with_agent(message):
     :param message: 当前对话的完整历史
     :return: agent的最终回答
     """
+    print("loading...")
     result = chatbot.invoke(
         {"messages": message}
     )
+    print("finished")
     return result["messages"][-1].content
 '''
 # 调试主函数
