@@ -17,3 +17,5 @@ __pycache__/
 *.db
 *.sqlite
 *.sqlite3
+
+running_log.txt
