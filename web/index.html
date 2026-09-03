@@ -9,7 +9,7 @@
       content="width=device-width, initial-scale=1.0">
 
 <title>企业订单智能分析</title>
-
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
 
 * {
@@ -545,6 +545,63 @@ body {
     }
 }
 
+/* =========================
+   Markdown 内容样式
+========================= */
+
+.content h1,
+.content h2,
+.content h3 {
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin: 8px 0;
+    line-height: 1.7;
+}
+
+.content ul,
+.content ol {
+    margin: 8px 0;
+    padding-left: 24px;
+    line-height: 1.7;
+}
+
+.content table {
+    border-collapse: collapse;
+    margin: 12px 0;
+    width: 100%;
+}
+
+.content th,
+.content td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.content th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+.content strong {
+    font-weight: 600;
+}
+
+.content code {
+    background: #f1f1f1;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.content pre {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
 </style>
 
 </head>
@@ -779,7 +836,16 @@ function addMessage(role, text) {
     content.className =
         "content";
 
-    content.textContent = text;
+    if (role === "assistant") {
+
+    content.innerHTML =
+        marked.parse(text);
+
+    } else {
+
+        content.textContent =
+            text;
+    }
 
 
     row.appendChild(avatar);
