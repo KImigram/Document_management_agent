@@ -1,0 +1,21 @@
+# ============================================================
+# 企业订单智能分析 Agent（Doc Agent）依赖清单
+# 建议 Python 3.10+
+# ============================================================
+
+# --- Agent / LLM ---
+langchain>=0.3
+langchain-core>=0.3
+langchain-deepseek>=0.1.5
+python-dotenv>=1.0
+
+# --- Web 服务 ---
+flask>=3.0
+
+# --- HTTP 请求 ---
+requests>=2.31
+
+# --- 数据处理（Excel → SQLite / 生成微调数据） ---
+pandas>=2.0
+openpyxl>=3.1
+tqdm>=4.66
