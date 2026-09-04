@@ -18,7 +18,7 @@ An intelligent document analysis system built on a **Large Language Model (LLM) 
 - [System Architecture](#system-architecture)
 - [Workflow](#workflow)
 - [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
+- [Getting Started](#getting-started) 
 - [Model Fine-tuning](#model-fine-tuning)
 - [Tech Stack](#tech-stack)
 - [License](#license)
@@ -49,7 +49,7 @@ The system follows a layered, modular design consisting of the **UI layer, backe
 
 <!-- TODO: place the architecture diagram at docs/images/architecture.png -->
 <p align="center">
-  <img src="docs/images/architecture.png" alt="System architecture diagram" width="80%">
+  <img src="img/arch.png" alt="System architecture diagram" width="80%">
   <br>
   <em>Figure 1: System architecture diagram</em>
 </p>
@@ -65,25 +65,18 @@ Users submit questions or images through the web frontend. Requests are forwarde
 
 Once a tool finishes, the result goes back to the main Agent, which synthesizes a natural-language answer. The Flask backend packages it as JSON and returns it to the frontend, closing the loop.
 
-<!-- TODO: place the workflow diagram at docs/images/flowchart.png -->
-<p align="center">
-  <img src="docs/images/flowchart.png" alt="System workflow diagram" width="80%">
-  <br>
-  <em>Figure 2: System workflow diagram</em>
-</p>
 
-<!-- TODO: place the agent workflow diagram at docs/images/agent_workflow.png -->
 <p align="center">
-  <img src="docs/images/agent_workflow.png" alt="Main agent workflow diagram" width="80%">
+  <img src="img/allflow.png" alt="Main agent workflow diagram" width="80%">
   <br>
-  <em>Figure 3: Main agent workflow</em>
+  <em>Figure 2: System workflow</em>
 </p>
 
 <!-- TODO: place the web UI screenshot at docs/images/web_ui.png -->
 <p align="center">
-  <img src="docs/images/web_ui.png" alt="Web UI" width="80%">
+  <img src="img/webui.png" alt="Web UI" width="80%">
   <br>
-  <em>Figure 4: Web interface</em>
+  <em>Figure 3: Web interface</em>
 </p>
 
 ---
@@ -203,9 +196,9 @@ All metrics improved significantly after fine-tuning; training loss dropped from
 
 <!-- TODO: place the training loss / metrics chart at docs/images/training_loss.png -->
 <p align="center">
-  <img src="docs/images/training_loss.png" alt="Training loss curve and evaluation metrics" width="80%">
+  <img src="train_2026-09-02-02-49-02/training_loss.png" alt="Training loss curve" width="80%">
   <br>
-  <em>Figure 5: Final model training loss curve and evaluation metrics</em>
+  <em>Figure 4: Final model training loss curve</em>
 </p>
 
 ---
