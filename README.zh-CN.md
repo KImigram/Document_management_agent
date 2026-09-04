@@ -49,7 +49,7 @@
 
 <!-- TODO: 将系统架构图放入 docs/images/architecture.png -->
 <p align="center">
-  <img src="docs/images/architecture.png" alt="系统架构图" width="80%">
+  <img src="img/arch.png" alt="系统架构图" width="80%">
   <br>
   <em>图 1 系统架构图</em>
 </p>
@@ -65,25 +65,18 @@
 
 工具执行完成后将结果返回主 Agent，由主 Agent 整合并生成自然语言回答，最终经 Flask 封装为 JSON 返回前端展示，形成完整闭环。
 
-<!-- TODO: 将工作流程图放入 docs/images/flowchart.png -->
-<p align="center">
-  <img src="docs/images/flowchart.png" alt="系统工作流程图" width="80%">
-  <br>
-  <em>图 2 系统工作流程图</em>
-</p>
 
-<!-- TODO: 将主 Agent 工作流程图放入 docs/images/agent_workflow.png -->
 <p align="center">
-  <img src="docs/images/agent_workflow.png" alt="主 Agent 工作流程图" width="80%">
+  <img src="img/allflow.png" alt="系统工作流程图" width="80%">
   <br>
-  <em>图 3 主 Agent 工作流程</em>
+  <em>图 2 系统工作流程</em>
 </p>
 
 <!-- TODO: 将网页端界面截图放入 docs/images/web_ui.png -->
 <p align="center">
-  <img src="docs/images/web_ui.png" alt="网页端界面" width="80%">
+  <img src="img/webui.png" alt="网页端界面" width="80%">
   <br>
-  <em>图 4 网页端界面</em>
+  <em>图 3 网页端界面</em>
 </p>
 
 ---
@@ -203,9 +196,9 @@ python web/app.py
 
 <!-- TODO: 将训练损失曲线/评估指标图放入 docs/images/training_loss.png -->
 <p align="center">
-  <img src="docs/images/training_loss.png" alt="模型训练损失曲线与评估指标" width="80%">
+  <img src="train_2026-09-02-02-49-02/training_loss.png" alt="模型训练损失曲线与评估指标" width="80%">
   <br>
-  <em>图 5 最终模型训练损失曲线与评估指标</em>
+  <em>图 5 最终模型训练损失曲线</em>
 </p>
 
 ---
